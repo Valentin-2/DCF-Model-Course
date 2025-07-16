@@ -73,9 +73,10 @@ The discount rate is a key variable in the DCF model. A small change in its esti
 \end{enumerate}
 
 To value a firm we will therefore use the weighed average cost of capital ($WACC$) that is computed through the cost of equity and the cost of debt. The $WACC$ is computed using the formula : 
-\begin{equation}
-    WACC = \text{Cost of equity}  \times \frac{\text{Equity}}{\text{Debt + Equity}} + \text{Cost of debt} \times \frac{\text{Debt}}{\text{Debt + Equity}}
-\end{equation}
+\begin{multline}
+        WACC = \text{Cost of equity}  \times \frac{\text{Equity}}{\text{Debt + Equity}} \\+ \text{Cost of debt} \times \frac{\text{Debt}}{\text{Debt + Equity}} \times (1-t)
+\end{multline}
+where $t$ is the marginal tax rate on corporate income\footnote{This is a non-sense in France, take $(1-t) = 1$}.
 
 
 \subsubsection{The cost of equity}
@@ -110,7 +111,6 @@ Otherwise, if we don't work with a Gross Revenu version of the index we must add
     r_i = \frac{\text{Final value} +  \text{Dividends}}{\text{Initial value}} -1
 \end{equation}
 
-\vfill
 
 
 Considering the market index we must alway look for the longest range of data (as far as we can go in the past). However, as for the governmental bond we should use the same risk free rate $r_f$, therefore often a 5 or 10 years range. Eventually we can compute the market risk premium : 
@@ -143,6 +143,9 @@ where $a$ is the intercept and $b$ is the slope of the regression model. The gre
 
 
 The $\beta$ of a company is determined by three mains levers or factors that are \textit{1)} product or service type, \textit{2)} operating leverage and \textit{3)} the financial leverage. All leverage have their own implications : 
+
+\vspace{10cm}
+
 \begin{itemize}
     \item \textit{Nature of product or services}
     \begin{itemize}
@@ -184,7 +187,7 @@ As for small companies, Damodaran advises a reversed approach : the bottom-up Be
  
  However, using beta  to compute the cost of equity for a private firm will always underestimate the cost of equity for that private firm. This is due to the fact that beta measures market (systematic) risk\footnote{Systematic risk is the portion of an asset’s total risk that is caused by factors affecting the entire market or economy and cannot be eliminated through diversification. It is also called market risk or non-diversifiable risk and driven by macroeconomic variables such as interest rates, inflation, economic growth, political instability, natural disasters. It affects all companies, although not equally (some sectors are more sensitive).}, i.e. the risk that matters to a diversified investor. But private firm owners are usually not diversified : a private business owner is exposed to total risk — both market risk and company-specific risk.  So, using a beta-based cost of equity (which only prices systematic risk) assumes the investor is diversified — which is not will underestimate risk profile by capturing only systematic risk that is, by definition, smaller than total risk. To adjust the beta to reflect total risk rather than market risk it is rather simple since the determination coefficient ($R^2$) of the regression measures the proportion of the risk that is market risk :
  \begin{equation}
-      \beta_{total} = \frac{\beta}{\rho}
+      \beta_{total} = \frac{\beta}{\sqrt{R^2}} = \frac{\beta}{\sqrt{\rho^2}}
  \end{equation}
 where $\rho$ is the correlation coefficient between stock returns of the company (or sector) and the returns of the overall market. Therefore $\rho$ asses how much the asset moves with the market, but unlike beta, it doesn't scale by volatility — it’s a pure measure of co-movement. For $R_i$ the serie of returns for the firm and $R_m$ a serie of market return we have then 
 \begin{equation}
@@ -200,7 +203,7 @@ L_{index} = \sum^5_{t=1}\frac{CF_t}{(1+r)^t} + \displaystyle\frac{\frac{CF_6}{r-
 \end{equation}
 the we must solve for $r$ (the only way is by trial and error). Once $r$ is found, we can compute the implied risk premium : 
 \begin{equation}
-    \text{Implied Risk Premium} = r - g_{perpetual}
+    \text{Implied Risk Premium} = r - r_f
 \end{equation}
 based on this implied risk premium, (particularly useful for the US), we can compute some variation of the CPAM model to adress different risk profiles : 
 
