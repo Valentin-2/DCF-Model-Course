@@ -6,8 +6,7 @@
 
 \include{couverture}
 
-%----------------------------------------------------------
-% THIS IS A TEST
+
 
 
 \newpage
@@ -46,201 +45,167 @@
 
 \vfill
 
-\lettrine{A}{} valuation method always aims to determine the value of an asset or a company. However all valuation are biased : the exact pricing will never be found. The only question is how far are you from the truth and how are you biased from who you got paid. Hence, all valuation are only meant to compute an estimated value. Such a model don't need a vast amount of inputs to be useful : to keep things understandable is the key point of a valuation model. The DCF (discounted cash flows) model aims to estimate the value of an asset or business based on the present value of the expected future cash flows of that asset or business. Therefore, the assets or businesses with strong cash flows in a near future will be considered with more value than assets with later cash flows. When valuing a company, the analyst aims to determine the total value of the business — not just the equity but also the claims held by other stakeholders. The DCF model is performed under the assumption of market inefficiency : the price are not perfect and don't reflect all the available information. Market is thus expected to make mistakes in its pricing and to correct those mistakes across time with new data gathering. 
-
+\lettrine{A}{} valuation method always aims to determine the value of an asset or a company. However, all valuations are biased: the exact price will never be found. The only question is how far you are from the truth—and how your bias depends on who is paying you. Hence, all valuations are only meant to provide an estimated value. Such a model doesn't need a vast number of inputs to be useful: keeping things understandable is the key to an effective valuation. The DCF (Discounted Cash Flow) model aims to estimate the value of an asset or business based on the present value of its expected future cash flows. Therefore, assets or businesses with strong near-term cash flows will be valued more highly than those with later cash flows. When valuing a company, the analyst aims to determine the total value of the business—not just the equity, but also the claims held by other stakeholders. The DCF model operates under the assumption of market inefficiency: prices are not perfect and do not reflect all available information. The market is therefore expected to make pricing mistakes and to correct them over time as new information emerges.
 
 
 
 
 \chapter{Presentation of the model}
 
-
-The core of the model relies on the discounting of future cash flow. In all this document we will use $t$ as a marker of time, and $CF_t$ as the cash flow in time $t$. The principle of the model is to discount the cash flow of the business based on grow assumption and a discount rate. Therefore, the first statement is that for a business to have a positive value, it must have positive cash flows. The cash flow we use are the free cash flows (that we could note $FCFF_t$ but we will simplify this as $CF_t$). 
+The core of the model relies on the discounting of future cash flows. Throughout this document, we will use $t$ as a marker of time and $CF_t$ to denote the cash flow at time $t$. The principle of the model is to discount the business’s cash flows based on growth assumptions and a discount rate. Therefore, the first statement is that for a business to have a positive value, it must generate positive cash flows. The cash flows we use are free cash flows (which we could denote as $FCFF_t$, but for simplicity, we will use $CF_t$).
 
 \section{The inputs of the model}
 
-Depending on valuing an asset or a firm, the inputs are not exactly the same. For valuing equity, we will use the cost of equity, whereas for valuing a firm, we will use the cost of capital. Alongside, depending on whether you use nominal or real cash flows, we will use a real or nominal discount rate. Once the discount rate is settled (it may vary across time), we must compute the current earnings and cash flows, as well as future earnings and cash flows (there we must make some assumptions about risk and growth rate). Eventually, we must estimate when the growth will stabilize and upon which parameters of risk and cash flows.   
+Depending on whether we are valuing an asset or a firm, the required inputs differ slightly. To value equity, we use the cost of equity; to value a firm, we use the cost of capital. Additionally, depending on whether the cash flows are expressed in nominal or real terms, we must use a corresponding nominal or real discount rate. Once the discount rate is established (noting that it may vary over time), we must compute both current and projected earnings and cash flows, which involves making assumptions about risk and growth. Ultimately, we also need to estimate when the company’s growth will stabilize, and under which risk and cash flow parameters this will occur.
 
 \subsection{The discount rate}
 
-The discount rate is a key variable in the DCF model. A small change in its estimation may lead to a significant variation in the final result. The keystone for an accurate estimation of the discount rate is coherence with the type of cash flows used in the model. Here are some principles of consistency : 
+The discount rate is a key variable in the DCF model. A small change in its estimation can lead to significant variation in the final valuation result. The cornerstone of an accurate discount rate estimation is consistency with the type of cash flows used. Here are some principles of consistency:
 
 \begin{enumerate}[label=(\alph*)]
-    \item \textit{Cash flow consistency} : if the discounted cash flows are cash flows to equity then the appropriate discount rate is a cost of equity. If the cash flows are free cash flows to the firm then we must use the cost of capital.
+    \item \textit{Cash flow consistency} : If the discounted cash flows are cash flows to equity, the appropriate discount rate is the cost of equity. If the cash flows are free cash flows to the firm, then we must use the cost of capital.
 
-    \item \textit{Currency consistency} : The discount rate must be estimated in the same currency than cash flows.
+    \item \textit{Currency consistency} : The discount rate must be estimated in the same currency as the cash flows.
 
-    \item  \textit{Nominal and real consistency} : The discount rate have to be real or nominal depending on which are the cash flows.
+    \item  \textit{Nominal and real consistency} : The discount rate must be either real or nominal, depending on the nature of the cash flows.
 \end{enumerate}
 
-To value a firm we will therefore use the weighed average cost of capital ($WACC$) that is computed through the cost of equity and the cost of debt. The $WACC$ is computed using the formula : 
+To value a firm, we therefore use the weighted average cost of capital ($WACC$), which is calculated using the cost of equity and the cost of debt. The $WACC$ is computed using the formula: 
 \begin{multline}
         WACC = \text{Cost of equity}  \times \frac{\text{Equity}}{\text{Debt + Equity}} \\+ \text{Cost of debt} \times \frac{\text{Debt}}{\text{Debt + Equity}} \times (1-t)
 \end{multline}
-where $t$ is the marginal tax rate on corporate income\footnote{This is a non-sense in France, take $(1-t) = 1$}.
+where $t$ is the marginal corporate income tax rate\footnote{This is not applicable in France; take $(1-t) = 1$.}.
 
 
 \subsubsection{The cost of equity}
 
-The cost of equity (CoE) is the return, as a rate, that investors require for investing in a company's equity (its shares), given the risk they are taking compared to a risk-free investment. Therefore, the cost of equity increase with investment risk profile. There are different models to compute the cost of equity $E_r$, most popular one being the Capital Asset Pricing Model (CAPM). In this model, the cost of equity is comuted by the formula : 
+The cost of equity (CoE) is the return, expressed as a rate, that investors require for investing in a company's equity (its shares), given the risk they take compared to a risk-free investment. Therefore, the cost of equity increases with the investment's risk profile. There are different models to compute the cost of equity $E_r$, the most popular being the Capital Asset Pricing Model (CAPM). In this model, the cost of equity is computed using the formula: 
 \begin{equation}
-    E_r = r_f +\beta(r_m - r_f)
+    E_r = r_f + \beta(r_m - r_f)
 \end{equation}
-where $r_f$ is the risk free rate\footnote{The risk-free rate is the theoretical return on an investment that carries zero risk of financial loss.
-In practice, it represents the interest rate an investor would expect from a completely safe investment over a given period.}, the greek $\beta$ is the sensitivity of the asset returns to the returns of the overall market portfolio. Thus $\beta$ quantifies the systematic (non-diversifiable) risk of the asset relative to the market. Finally, $r_m$ is the  expected return of the market portfolio, representing the weighted average return of all investable assets in the economy ; together with $r_f$ they represent the market risk premium : $(r_m - r_f)$. In practice we use short term government bond yield as the risk free rate $r_f$. The market risk premium is determined using historical risk premiums and $\beta$ is estimated by regressing stock returns against market returns. 
+where $r_f$ is the risk-free rate\footnote{The risk-free rate is the theoretical return on an investment that carries zero risk of financial loss.
+In practice, it represents the interest rate an investor would expect from a completely safe investment over a given period.}, and the Greek letter $\beta$ represents the sensitivity of the asset's returns to those of the overall market portfolio. Thus, $\beta$ quantifies the systematic (non-diversifiable) risk of the asset relative to the market. Finally, $r_m$ is the expected return of the market portfolio, representing the weighted average return of all investable assets in the economy. Together, $r_f$ and $r_m$ define the market risk premium: $(r_m - r_f)$. 
 
-\paragraph{Risk free rate estimation}
+In practice, we use short-term government bond yields as a proxy for the risk-free rate $r_f$. The market risk premium is typically determined using historical averages, and $\beta$ is estimated by regressing stock returns against market returns.
 
-Once again, the risk free rate must be in the same currency and in the same term (nominal, real) as cash flows. On a risk free asset, the actual return equals the expected return. Hence there is no variance around the expected return. For instance we use 10 year US treasury bond yield as a risk free rate for USD investment. As for EUR investment, we tend to use German 10 year treasury bond yield. A consistent approach consists in matching the scope of the yield (3,10,20 years) with the scope of the analysis. For riskier countries, or to try a more precise approach, we can use the government bond rate and 5 year CDS spread to compute an accurate risk free rate :
+\paragraph{Risk-free rate estimation}
+
+Once again, the risk-free rate must be expressed in the same currency and in the same terms (nominal or real) as the cash flows. For a risk-free asset, the actual return equals the expected return, implying zero variance. For example, we use the 10-year US Treasury bond yield as the risk-free rate for USD investments. For EUR investments, we typically use the German 10-year government bond yield.
+
+A consistent approach involves matching the maturity of the yield (e.g., 3, 10, or 20 years) with the time horizon of the analysis. For riskier countries, or when aiming for more precision, we can estimate an adjusted risk-free rate using the local government bond rate minus the 5-year CDS spread:
 \begin{equation}
     r_f = \text{Bond yield} - \text{CDS default spread}
 \end{equation}
-we must ensure CDS spread and bond are on the same maturity ! In case the CDS default spread is not easily found, we can asses the default spread based on the local currency rating. Moreover, in the case of a strength inflation context, we can use the yield from an inflation-indexed government bond, if one exists.  
+It is important to ensure that the CDS spread and bond maturity match. If the CDS spread is unavailable, we can estimate it using the local currency credit rating. In high-inflation environments, an inflation-indexed government bond yield may be used if available.
 
 \paragraph{Market risk premium}
 
-The market risque premium computed by $(r_m-r_f)$ is the following parameter we will study. To compute the market risk premium we will need the annual  return of a broad index (including its dividend) and of the treasury bond on that same period. We will then make the difference between both. For this reason we have to make sure we use a "gross revenue" annual return of the index. If the "Gross Revenue" return value is not computed we have to use the geometrical mean\footnote{Damoradan bolds the geometrical mean is more accurate that a linear mean for an extended period of time with volatile values} of the annual returns : 
+The market risk premium, calculated as $(r_m - r_f)$, is the next parameter we consider. To estimate it, we compare the annual return of a broad market index (including dividends) with the return of a risk-free asset over the same period. This means we must ensure the index return is a “gross return,” i.e., inclusive of dividends.
+
+If gross return data is not directly provided, we compute it using the geometric mean\footnote{Damodaran emphasizes that the geometric mean is more accurate than the arithmetic mean over long periods with volatile data.} of annual returns:
 \begin{equation}
-    r_m = \bigg( \prod^n_{i=1}(1+r_i)\bigg)^\frac{1}{n}-1
+    r_m = \bigg( \prod^n_{i=1}(1 + r_i)\bigg)^\frac{1}{n} - 1
 \end{equation}
-were all the $r_i$ are the annual return of the year $i$. Those returns must include any dividend or coupon payments. Therefore we tend to work with GR version of an index such as CAC 40 GR\footnote{\href{See more here on Euronext website}{https://live.euronext.com/fr/product/indices/QS0011131834-XPAR/market-information}}. Thus we have
+where each $r_i$ is the annual return in year $i$, including any dividends or coupon payments. As a result, we often use the GR (Gross Return) version of an index, such as the CAC 40 GR\footnote{\href{See more here on Euronext website}{https://live.euronext.com/fr/product/indices/QS0011131834-XPAR/market-information}}. In that case:
 \begin{equation}
-    r_i = \frac{\text{Final value GR}_i}{\text{Initial value GR}_i} -1
+    r_i = \frac{\text{Final value GR}_i}{\text{Initial value GR}_i} - 1
 \end{equation}
-Otherwise, if we don't work with a Gross Revenu version of the index we must add the received payments : 
+If a gross return index is not available, we must manually add the dividends:
 \begin{equation}
-    r_i = \frac{\text{Final value} +  \text{Dividends}}{\text{Initial value}} -1
+    r_i = \frac{\text{Final value} + \text{Dividends}}{\text{Initial value}} - 1
 \end{equation}
 
-
-
-Considering the market index we must alway look for the longest range of data (as far as we can go in the past). However, as for the governmental bond we should use the same risk free rate $r_f$, therefore often a 5 or 10 years range. Eventually we can compute the market risk premium : 
+When choosing a time frame for the historical data, we should use the longest period available, as long as the risk-free rate $r_f$ used in the comparison is consistent (usually over 5 or 10 years). Finally, we compute the market risk premium as:
 $$
 \text{Market Risk Premium} = r_m - r_f
 $$
+\paragraph{The Greek beta}
 
-\paragraph{The greek beta}
-
-The parameter $\beta$ measures how sensitive a company’s returns are to movements in the overall market. The standard procedure to estimate $\beta$ is to regress stock return $r_j$ against the market return $r_m$, which gives : 
+The parameter $\beta$ measures how sensitive a company’s returns are to movements in the overall market. The standard procedure to estimate $\beta$ is to regress the stock return $r_j$ against the market return $r_m$, which gives: 
 \begin{equation}
-    \forall\,j\in \mathbb{N},\,\, r_j = a+b\times r_m
+    \forall\,j\in \mathbb{N},\,\, r_j = a + b \times r_m
 \end{equation}
-where $a$ is the intercept and $b$ is the slope of the regression model. The greek $\beta$ is simply the slope of the regression : $\beta = b$.  However we must be careful about the downsides of such a model. Indeed, the $\beta$ is not stable across time, it has a high standard error, and varies upon the selected index used for the regression. We can conclude from the regression that :
+where $a$ is the intercept and $b$ is the slope of the regression model. The Greek $\beta$ is simply the slope of the regression: $\beta = b$. However, we must be cautious about the downsides of this model. In particular, $\beta$ is not stable over time, it often comes with a high standard error, and its value can vary significantly depending on the index used for the regression. Based on the result of the regression, we can interpret the behavior of the stock according to the following table:
+
 \begin{table}[H]
     \centering
     \begin{tabularx}{\textwidth}{cX}
         \toprule
         $\beta$ & \textbf{Stock behavior relative to the market} \\
         \midrule
-        $\beta = 1$ & The stock moves the same as the market \\ 
+        $\beta = 1$ & The stock moves in line with the market \\ 
         $\beta > 1$ & The stock is more volatile than the market \\
         $\beta < 1$ & The stock is less volatile than the market \\
-        $\beta < 0$ & The company moves oppositely to the market \\
+        $\beta < 0$ & The stock moves in the opposite direction to the market \\
         \bottomrule
     \end{tabularx}
     \caption{Stock behavior relative to the market according to $\beta$ value}
     \label{tab:my_label}
 \end{table}
 
+The $\beta$ of a company is driven by three main factors: the type of product or service offered, the operating leverage, and the financial leverage. Each of these dimensions plays a role in determining a firm's sensitivity to market movements. Cyclical firms typically have higher betas than non-cyclical ones. Luxury goods tend to have higher betas than basic consumer goods. Expensive, discretionary items will show greater volatility than essential low-cost products. Similarly, firms in high-growth industries tend to have higher betas.
 
-The $\beta$ of a company is determined by three mains levers or factors that are \textit{1)} product or service type, \textit{2)} operating leverage and \textit{3)} the financial leverage. All leverage have their own implications : 
+Operating leverage also influences $\beta$. Firms with high fixed costs are more exposed to variations in revenue, increasing the volatility of earnings and thus the beta. For similar reasons, smaller firms—often more volatile in earnings—also tend to have higher betas than larger, more diversified firms. Financial leverage, lastly, impacts $\beta$ through debt: companies with higher levels of debt have higher fixed financial obligations, which amplifies the volatility of equity returns, and hence increases $\beta$.
 
-\vspace{10cm}
-
-\begin{itemize}
-    \item \textit{Nature of product or services}
-    \begin{itemize}
-    \item Cyclical companies should have higher betas than non-cyclical companies
-
-    \item Luxury brands should have a higher beta than basic brands
-
-    \item High priced goods and services should have a higher beta that low prices goods
-
-    \item Growth firm should have a higher beta
-    \end{itemize}
-
-    \item \textit{Operating leverage}
-    \begin{itemize}
-        \item Firms with high structural/fixed costs should have a higher beta (because higher fixed costs increase exposure to risk)
-
-        \item Smaller firms should have a higher beta than larger firms
-    \end{itemize}
-
-    \item \textit{Financial leverage}
-
-    \begin{itemize}
-        \item Firms with high debt should have a higher beta (because debt creates a fixed cost, interest expenses, that increases exposure to market risk)
-    \end{itemize}
-    
-\end{itemize}
-
-Consequently, given  the $\beta$ include leverage by debt, we call the $\beta$ obtained by regression the "levered beta" or the "equity beta". However, Damodaran reckons this beta may not be accurate enough due to noise and time instability, especially for small companies or firms that changed their core business. Instead, Damodaran advises to compute an unlevered version of $\beta$ that he notes $\beta_u$. This beta neutralize the debt lever effect and allows to compare firms with different debt, on their core business risk profile. We compute the unlevered beta using the formula : 
+Because the regression-based $\beta$ reflects the firm’s current capital structure, it includes the effect of financial leverage. This is why it is often called the “levered beta” or “equity beta.” However, Damodaran points out that this beta may be unreliable, especially for smaller companies or those undergoing structural change. To isolate the business risk of the firm, he recommends using the “unlevered beta,” noted $\beta_u$, which neutralizes the impact of debt. This unlevered beta is computed as follows:
 \begin{equation}
-   \displaystyle \beta_u = \frac{\beta}{1+\frac{(1-t)D}{E}} 
+   \beta_u = \frac{\beta}{1+\frac{(1-t)D}{E}} 
 \end{equation}
-where $t$ is the marginal corporate tax rate\footnote{This is aplicable only if the tax rate depend upon the profit of the company. Otherwise $t$ is just the corporate tax rate}. 
+where $t$ is the marginal corporate tax rate\footnote{This applies only if the tax rate depends on the company’s profit. Otherwise, $t$ is the statutory corporate tax rate.}.
 
-As for small companies, Damodaran advises a reversed approach : the bottom-up Betas.  In that sens, we first identify the branch of businesses the firm operates in. The second step is to find publicly traded firms in each of these business and obtain their regression betas. We compute the simple average across theses regression betas to get an average beta. Finally, we unlever this average beta using the average debt-to-equity ratio across the public firm in the selected sample thanks to the formula (1.8). The following step, is to determine to what extend the different businesses the firm is involved in are participating in revenue (or EBITDA). The goal here is to get a ratio or a percentage for each line of business. Then the step four is to compute a weighted average of the unlevered betas of the different businesses (from step 2) using the weight from step 3. This results in a bottom-up unlevered beta. Eventually, we compute the levered beta for the firm using the formula : 
+For small or private firms, Damodaran advises a bottom-up approach. First, identify the sectors in which the firm operates. Then, find publicly listed firms in each sector and calculate their betas. By averaging these values, and unlevering them using the average debt-to-equity ratio in each sector, we obtain sector-level unlevered betas. These are then weighted according to the revenue or EBITDA share of each segment within the firm. The result is a bottom-up unlevered beta for the firm. This beta can be relevered using the company’s own capital structure:
 \begin{equation}
-    \beta_L =  \beta_u \times \bigg( 1 - \frac{(1-t)D}{E}\bigg)
+    \beta_L =  \beta_u \times \bigg( 1 + \frac{(1-t)D}{E} \bigg)
 \end{equation}
- The advantage of such an approach is the possibility to adjust year-to-year the debt to equity ratio and the weighting of the business lines. 
- 
- However, using beta  to compute the cost of equity for a private firm will always underestimate the cost of equity for that private firm. This is due to the fact that beta measures market (systematic) risk\footnote{Systematic risk is the portion of an asset’s total risk that is caused by factors affecting the entire market or economy and cannot be eliminated through diversification. It is also called market risk or non-diversifiable risk and driven by macroeconomic variables such as interest rates, inflation, economic growth, political instability, natural disasters. It affects all companies, although not equally (some sectors are more sensitive).}, i.e. the risk that matters to a diversified investor. But private firm owners are usually not diversified : a private business owner is exposed to total risk — both market risk and company-specific risk.  So, using a beta-based cost of equity (which only prices systematic risk) assumes the investor is diversified — which is not will underestimate risk profile by capturing only systematic risk that is, by definition, smaller than total risk. To adjust the beta to reflect total risk rather than market risk it is rather simple since the determination coefficient ($R^2$) of the regression measures the proportion of the risk that is market risk :
- \begin{equation}
-      \beta_{total} = \frac{\beta}{\sqrt{R^2}} = \frac{\beta}{\sqrt{\rho^2}}
- \end{equation}
-where $\rho$ is the correlation coefficient between stock returns of the company (or sector) and the returns of the overall market. Therefore $\rho$ asses how much the asset moves with the market, but unlike beta, it doesn't scale by volatility — it’s a pure measure of co-movement. For $R_i$ the serie of returns for the firm and $R_m$ a serie of market return we have then 
+This method has the advantage of being flexible: we can update it annually as business line weights and capital structure evolve.
+
+However, this approach is still incomplete when valuing private firms. Since $\beta$ only measures systematic (market) risk\footnote{Systematic risk is the portion of total risk caused by factors affecting the entire economy—such as inflation, interest rates, or political instability. It cannot be diversified away.}, it underestimates the risk faced by undiversified investors. Private firm owners usually bear total risk—both systematic and firm-specific—so a standard $\beta$ undervalues the true cost of equity. To correct for this, we introduce the total beta, which captures total risk. Since the regression’s $R^2$ measures the proportion of risk explained by the market, we compute the total beta as:
+\begin{equation}
+    \beta_{total} = \frac{\beta}{\sqrt{R^2}} = \frac{\beta}{\sqrt{\rho^2}}
+\end{equation}
+where $\rho$ is the correlation coefficient between the firm's returns and market returns. $\rho$ shows how much the stock co-moves with the market, but unlike $\beta$, it is not scaled by volatility. For a return series $R_i$ for the firm and $R_m$ for the market, we define $\rho$ as:
 \begin{equation}
     \rho = \frac{\operatorname{cov}(R_i,R_m)}{\sigma_i\times\sigma_m} \qquad \quad \rho = \frac{\beta}{\displaystyle\frac{\sigma_i}{\sigma_m}}
 \end{equation}
-where $\sigma$ are the standard deviation for the market or the firm. The $\beta_{total}$ can be then used in the CAPM model !
+where $\sigma$ represents standard deviations of returns. Once estimated, the total beta can be used directly in the CAPM model to reflect the total risk borne by private investors.
 
-\paragraph{Adressing risk profile}
+\paragraph{Addressing risk profile}
 
-In another hand, we can modify slightly the CAPM model to get a more accurate view of  the risk profile of the company. This works with the country Equity Risk Premium (ERP) that is estimated by 5 year CDS spread on the given country. The second parameter we will need is the US premium. There is two way to compute this premium : the first one (historical premium) is to to make a geometrical mean on the period of the 10 year T-bond yield and of the stock yield over the most extended period possible, and to substract the T-bond yield mean to the stock one ; the second way (implied premium) will require the level of country index (ex. CAC40, S\&P500, DAX...) $L_{index}$, the T-bond rate $B_{rate}$, the expected growth rate $g$ in the index cash flows for the next 5 years\footnote{The cash flows are the dividends plus stock buybacks of the entire index (share repurchases by the company)} that will allows us to get a 5-year-long serie of cash flows based on the first year cash flows ; and the perpetual growth rate $g_{perpetual}$. Then  by discounting the level of the index is given by :
+We can also adapt the CAPM model to account for differences in country risk exposure. The country equity risk premium (ERP) is typically estimated using the 5-year CDS spread of the country in question. The second required parameter is the equity risk premium for the U.S. There are two ways to estimate it. The first is historical: we compute the geometric average difference between the long-term return on the U.S. equity market and the yield on the 10-year Treasury bond. The second is the implied method. In this approach, we estimate the return implied by market prices. It requires the current level of the index $L_{index}$ (e.g., CAC 40, S\&P 500), the bond rate $B_{rate}$, the expected growth rate $g$ of the index’s cash flows over the next five years\footnote{These cash flows include both dividends and share buybacks.}, and the perpetual growth rate $g_{perpetual}$. The index level is then modeled as follows:
 \begin{equation}
-L_{index} = \sum^5_{t=1}\frac{CF_t}{(1+r)^t} + \displaystyle\frac{\frac{CF_6}{r-g_{perpetual}}}{(1+r)^5}
+L_{index} = \sum^5_{t=1}\frac{CF_t}{(1+r)^t} + \frac{\frac{CF_6}{r - g_{perpetual}}}{(1+r)^5}
 \end{equation}
-the we must solve for $r$ (the only way is by trial and error). Once $r$ is found, we can compute the implied risk premium : 
+Solving this equation for $r$ (typically by trial and error) gives us the implied return on equity. The implied ERP is simply:
 \begin{equation}
     \text{Implied Risk Premium} = r - r_f
 \end{equation}
-based on this implied risk premium, (particularly useful for the US), we can compute some variation of the CPAM model to adress different risk profiles : 
 
-\begin{enumerate}
-    \item \textit{Variation 1} : Assume that every company in the country is equally exposed to country risk. In this case :
-    \begin{equation}
-        E_r = r_f + \text{Country spread} +\beta \times \text{US premium}
-    \end{equation}
-
-
-    \item \textit{Variation 2} : Assume that a company’s exposure to country risk is similar to its exposure to other market risk.
-    \begin{equation}
-        E_r = r_f + \beta\times(\text{US premium}+\text{Country spread})
-    \end{equation}
-
-    \item \textit{Variation 3} : Treat country risk as a separate risk factor and allow firms to have different exposures to country risk (perhaps based upon the proportion of their revenues come from non-domestic sales) 
-    \begin{equation}
-        E_r = r_f + \beta \times \text{US premium} + \sum_{i=1}^n(\lambda_i \times \text{Country spread}_i)
-    \end{equation}
-    where $\sum_{i=1}^n\lambda_i = 1$ based on the proportion of each country in the firm's activity.
-\end{enumerate} 
-
-Finally, Damodaran advises rather to use implied ERP in the CPAM model than the historical market risk premium because implied ERP reflects what the market demands today for equity risk, based on actual prices and expected future cash flows ; and it avoids arbitrary choices like "how far back" and "T-bills or T-bonds?". Therefore, we can compute the cost of equity based on the CPAM model : 
+We can now use this implied ERP in modified versions of the CAPM to capture differences in risk exposure across countries. First, we may assume all companies are equally exposed to country risk:
 \begin{equation}
-    E_r = r_f + \beta\times \text{Implied ERP}
+    E_r = r_f + \text{Country spread} + \beta \times \text{US premium}
+\end{equation}
+Second, we may assume that country risk affects firms similarly to other market risks:
+\begin{equation}
+    E_r = r_f + \beta \times (\text{US premium} + \text{Country spread})
+\end{equation}
+Finally, we may treat country risk as a separate factor, where each firm’s exposure is weighted by its geographic revenue distribution:
+\begin{equation}
+    E_r = r_f + \beta \times \text{US premium} + \sum_{i=1}^n(\lambda_i \times \text{Country spread}_i)
+\end{equation}
+with $\sum_{i=1}^n \lambda_i = 1$ based on the share of each country in the firm’s activity.
+
+Damodaran recommends using the implied ERP in the CAPM rather than the historical one, as it reflects current market expectations and avoids arbitrary assumptions such as time horizons or choice of benchmarks (T-bills vs. T-bonds). This leads us to the simplified expression of the cost of equity:
+\begin{equation}
+    E_r = r_f + \beta \times \text{Implied ERP}
 \end{equation}
 
 \paragraph{Conclusion}
 
-The cost of equity is computed by the risk free rate $r_f$ (that has to be in the same currency and in the same term real or nominal as the cash flows) ; the $\beta$ (we will preferably use the bottom-up beta based upon other firms in the business) ; and the risk premium (either the historical risk premium or the implied risk premium that is better according to Damodaran). Once the cost of equity is found, we can start the next step : to compute the cost of debt. 
+The cost of equity is derived from three components: the risk-free rate $r_f$ (expressed in the same currency and terms—real or nominal—as the cash flows), the $\beta$ (preferably bottom-up and representative of the firm’s core business), and the equity risk premium (with a preference for the implied ERP over the historical one). Once the cost of equity is established, the next step is to compute the cost of debt.
 
 \subsubsection{The cost of debt}
 
-The cost of debt is the rate at which we can borrow at currently, It will reflect not only our default risk but also the level of interest rates in the market. There are two main approaches to estimate the cost of debt. The first one is looking up the yield to maturity on a straight bond outstanding from the firm. The limitation of this approach is that very few firms have long term straight bonds that are liquid and widely traded. The second one is looking up the rating for the firm and estimating a default spread based upon the rating. While this approach is more robust, different bonds from the same firm can have different ratings. we have to use a median rating for the firm. When in trouble (either because we  have no ratings or multiple ratings for a firm), we must estimate a synthetic rating for the firm and the cost of
-debt based upon that rating.
-
+The cost of debt is the rate at which the firm can currently borrow. It reflects both the firm’s credit risk and general market interest rates. There are two main approaches to estimating it. The first involves looking up the yield to maturity on an existing straight bond issued by the firm. However, this method has limitations, as few companies have long-term, liquid, and traded bonds. The second method relies on the firm’s credit rating. Using this rating, we can estimate a default spread and add it to the risk-free rate. While this approach is more robust, it may be complicated if the firm has several different bond issues with varying ratings. In such cases, we should use the median rating. If the firm is unrated or inconsistently rated, we can estimate a synthetic rating based on financial indicators and derive the cost of debt accordingly.
 
 
 \end{document}
