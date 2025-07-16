@@ -1,0 +1,74 @@
+\documentclass[9pt]{report}
+
+% Mise en page type "livre"
+\usepackage[
+  paperwidth=17cm,
+  paperheight=24cm,
+  margin=2cm
+]{geometry}
+
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{titlesec}
+\usepackage{microtype}
+\sloppy % évite les débordements
+\usepackage[colorlinks=true, linkcolor=black, urlcolor=black, citecolor=black]{hyperref}
+\usepackage{enumitem}
+ \usepackage{amsmath} 
+\usepackage{tocloft}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{tikz}
+\usepackage{titlesec}
+\usepackage[Conny]{fncychap}
+\usepackage[tight]{minitoc}
+\dominitoc
+\usepackage{tabularx}
+\usepackage{tcolorbox}
+\usepackage{xcolor}
+\usetikzlibrary{decorations.pathreplacing}
+\tcbuselibrary{fitting}
+\tcbuselibrary{skins,breakable}
+\usetikzlibrary{patterns}
+\tcbuselibrary{listings}
+\tcbuselibrary{minted}
+\usepackage{lettrine}
+
+
+% Définition de l'environnement Callout
+\newtcolorbox{callout}{
+    colback=black!15!white,              % Couleur de fond (gris clair)
+    boxrule=0pt,                    % Aucune bordure autour
+    borderline west={3.5pt}{0pt}{black!70!white}, % Bordure noire uniquement à gauche
+    enhanced,                       % Activation des options avancées
+    frame hidden,                    % Masquer toutes les bordures par défaut
+sharp corners
+}
+
+
+% Choix de polices
+\setmainfont{Garamond Libre} % pour le texte courant
+\newfontfamily\TitleFont{Playfair Display}
+\newfontfamily\SmallCapsFont{Garamond Libre} % pour petites majuscules
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+\usepackage{tocloft}
+\renewcommand{\labelitemi}{\textendash}
+
+
+\newcounter{definition}
+\newcommand{\definition}[1]{
+    \refstepcounter{definition}             % Incrémente le compteur et permet la référence
+    \textbf{Définition \thedefinition} #1  % Affiche "Définition" suivi du numéro
+}
